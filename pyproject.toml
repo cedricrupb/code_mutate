@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cmutate"
+version = "0.0.1"
+description = "A simplistic mutation tool for Python"
+readme = "README.md"
+authors = [{ name = "Cedric Richter" }]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+cmutate = "code_mutate.cli:main"
