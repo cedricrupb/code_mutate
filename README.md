@@ -4,7 +4,7 @@
 code.mutate is a mutation tool for Python that tries to replicate mutation operators of [MutPy](https://github.com/mutpy/mutpy). MutPy is a popular mutation testing tool that is sadly not longer maintained. The goal of the package is to port the main functionalities of MutPy, while integrating advances of modern mutation testing tools.
 
 > [!NOTE]
-> This project is a very early state. APIs and functionalities might change drastically.
+> This project is in a very early state. APIs and functionalities might change drastically.
 
 ## Installation
 The package is tested under Python 3.10. It can be installed via:
