@@ -46,7 +46,7 @@ class Mutation:
 
     def __repr__(self):
         start_line, start_pos, end_line, end_pos = self.source_pos
-        scope = f"@{self.scope}" if scope else ""
+        scope = f"@{self.scope}" if self.scope else ""
         return f"{self.op_type or 'MUT'}{scope}({start_line}:{start_pos} - {end_line}:{end_pos}) -> {self.target_text}"
     
 
@@ -68,7 +68,7 @@ def _identify_scope(source_node):
     scopes = []
 
     current = source_node
-    while current.parent != current:
+    while current and current.parent != current:
         if current.type == "function_definition":
             scopes.append(_function_name(current))
         elif current.type == "class_definition":
