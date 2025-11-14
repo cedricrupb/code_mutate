@@ -87,17 +87,17 @@ List of supported MutPy mutation operators sorted by alphabetical order:
 - COI - conditional operator insertion
 - CRP - constant replacement
 - DDL - decorator deletion
-- ~~EHD - exception handler deletion~~
-- ~~EXS - exception swallowing~~
-- ~~IHD - hiding variable deletion~~
-- ~~IOD - overriding method deletion~~
+- EHD - exception handler deletion
+- EXS - exception swallowing
+- IHD - hiding variable deletion
+- IOD - overriding method deletion
 - ~~IOP - overridden method calling position change~~
 - LCR - logical connector replacement
 - LOD - logical operator deletion
 - LOR - logical operator replacement
 - ROR - relational operator replacement
-- ~~SCD - super calling deletion~~
-- ~~SCI - super calling insert~~
+- SCD - super calling deletion
+- SCI - super calling insert
 - SIR - slice index remove
 
 ## Project Info
