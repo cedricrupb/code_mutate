@@ -77,7 +77,7 @@ class ConstantReplacement(MutationOperator):
         else:
             rep = "'python'"
         
-        return [ASTMutation(node, "", op_type = "CRP"), 
+        return [ASTMutation(node, "''", op_type = "CRP"), 
                 ASTMutation(node, rep, op_type = "CRP") ]
     
 
