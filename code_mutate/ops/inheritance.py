@@ -51,8 +51,15 @@ class BaseOverridenElementMutation(MutationOperator):
             if parent.type == "class_definition": break
             parent = parent.parent
 
+        if parent is None or parent.type != "class_definition":
+            return False
+
         superclasses = []
         superclasses_node = parent.child_by_field_name("superclasses")
+
+        if not superclasses_node:
+            return False
+        
         if superclasses_node:
             if superclasses_node.type == "identifier":
                 superclasses.append(superclasses_node.text.decode())
