@@ -24,7 +24,7 @@ class BaseOverridenElementMutation(MutationOperator):
             if "_definition" in current.type: return False
             current = current.parent
 
-        return True
+        return current and current.type == "class_definition"
     
     def _find_superclasses(self, node, superclasses):
         module = node.parent
