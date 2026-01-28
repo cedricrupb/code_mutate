@@ -152,17 +152,22 @@ class BaseSuperCallingMutation(MutationOperator):
             if "_definition" in current.type: return False
             current = current.parent
 
-        return True
+        return current is not None and current.type == "class_definition"
 
     def is_super_call(self, node, stmt):
         if stmt.type != "expression_statement": return False
+            
+        if not stmt.children: return False # expression_statement might have no children
+        
         stmt = stmt.children[0]
         if stmt.type != "assignment": return False
         
         value = stmt.child_by_field_name("right")
-        if  value.type != "call": return False
+        if value is None or value.type != "call":return False
         
         function = value.child_by_field_name("function")
+        if function is None:return False
+                    
         if function.type == "attribute" and function.child_by_field_name("object").type == "call":
             call = function.child_by_field_name("object")
             if call.child_by_field_name("function").text.decode() != "super":
